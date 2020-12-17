@@ -26,7 +26,15 @@ bert.train(self, train_data_path, epochs, save_weight=True, checkpoint_path=None
 
 > 对模型进行训练
 
-* `train_data_path`:训练数据存储路径(自定按照指定比例划分训练集与验证集)
+* `train_data_path`:训练数据存储路径(自动按照指定比例划分训练集与验证集), 支持读取`*.csv`、`*.xlsx`、`*.xls`三种文件类型
+    * Eg: (不需要指定字段标签名称)
+    
+        | *text*   | *label_0* | *label_1* |
+        | ------ | ------- | ------- |
+        | text_1 | 0       | 1       |
+        | text_2 | 1       | 1       |
+        | text_3 | 0       | 0       |
+
 * `epoch`:训练次数
 * `save_weight`:`default=True`, 保存训练结果
 * `checkpoint_path`:`default=None`, 断点保存路径, 如果不是`None`将从`checkpoint_path`中加载模型权重并开始训练
@@ -39,6 +47,14 @@ bert.predict(self, test_data_path, output_path, model_path=None)
 
 > 使用训练好的模型进行分类标记
 
-* `test_data_path`:待标记数据文件存储路径
+* `test_data_path`:待标记数据文件存储路径, 支持读取`*.csv`、`*.xlsx`、`*.xls`三种文件类型
+    * Eg: (不需要指定字段标签名称)
+    
+        | *text*   |
+        | ------ | 
+        | text_1 | 
+        | text_2 | 
+        | text_3 | 
+
 * `output_path`:标记结果文件保存路径
 * `model_path`:`default=None`, 如果不是`None`将从`model_path`中重新加载模型权重
