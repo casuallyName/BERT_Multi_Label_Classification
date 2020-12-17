@@ -1,6 +1,5 @@
 # BERT_Multi_Label_Classification
-## BERT
-## BERT.\_\_init__
+## BERT.*\_\_init__*
 ```python
 bert = (self, per_train_model_dir, num_of_classes, class_name_list=None, **kwargs)
 ```
@@ -18,7 +17,7 @@ bert = (self, per_train_model_dir, num_of_classes, class_name_list=None, **kwarg
     * `model_save_dir`:`default='ModelWeights'`, 模型权重保存路径
     * `line_acc`:`default=0.8`, 预测结果置信准确度
 
-### bert.train
+## bert.train
 
 ```python
 bert.train(self, train_data_path, epochs, save_weight=True, checkpoint_path=None)
@@ -39,7 +38,7 @@ bert.train(self, train_data_path, epochs, save_weight=True, checkpoint_path=None
 * `save_weight`:`default=True`, 保存训练结果
 * `checkpoint_path`:`default=None`, 断点保存路径, 如果不是`None`将从`checkpoint_path`中加载模型权重并开始训练
 
-### BERT.predict
+## bert.predict
 
 ```python
 bert.predict(self, test_data_path, output_path, model_path=None)
