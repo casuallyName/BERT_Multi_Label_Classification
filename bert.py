@@ -70,7 +70,8 @@ class BERT(object):
         self.model = self.__init_model()
 
     def __str__(self):
-        return '<BERT.model.Multi-Label_Classification>'
+        info = '<BERT.model.Multi-Label_Classification>'
+        return info
 
     def __read_data(self, data_path):
         '''
@@ -160,6 +161,14 @@ class BERT(object):
         return model
 
     def train(self, train_data_path, epochs, save_weight=True, checkpoint_path=None):
+        '''
+
+        :param train_data_path:
+        :param epochs:
+        :param save_weight:
+        :param checkpoint_path:
+        :return:
+        '''
         data_df = self.__read_data(train_data_path)
         encode_train_data, encode_val_data = self.__train_data_pre_processing(data_df)
         if checkpoint_path:
