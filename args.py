@@ -19,7 +19,7 @@ parser.add_argument('--train_data_path', type=str, help='训练文件保存路�
 
 parser.add_argument('--test_data_path', type=str, help='测试文件保存路径')
 
-parser.add_argument('--model_path',default=None,type=str,help='加载模型路径')
+parser.add_argument('--model_path', default=None, type=str,help='加载模型路径')
 
 parser.add_argument('--output_path', type=str, help='预测结果保存路径')
 
